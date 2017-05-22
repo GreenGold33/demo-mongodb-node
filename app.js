@@ -36,8 +36,8 @@ MongoClient.connect(url, (err, db) => {
   app.use( (req,res,next) => {
 
     /** Extra Code: No le hagais mucho caso a esto -> Don't get mad! */
-    const reqReadyToBeWritten = cycle.decycle(req), null, 2 )
-    const reqStringified = JSON.stringify( reqReadyToBeWritten )
+    const reqReadyToBeWritten = cycle.decycle(req)
+    const reqStringified = JSON.stringify( reqReadyToBeWritten , null, 2 )
     fs.writeFileSync('request.json', reqStringified)
     /** @end Extra Code: Let the games begin! */
 
@@ -65,8 +65,8 @@ MongoClient.connect(url, (err, db) => {
   app.get('/restaurants/borough/:borough', (req,res) => {
 
     /** Extra Code: No le hagais mucho caso a esto -> Don't get mad! */
-    const reqReadyToBeWritten = cycle.decycle(req), null, 2 )
-    const reqStringified = JSON.stringify( reqReadyToBeWritten )
+    const reqReadyToBeWritten = cycle.decycle(req)
+    const reqStringified = JSON.stringify( reqReadyToBeWritten , null, 2 )
     fs.writeFileSync('request_augmented.json', reqStringified)
     /** @end Extra Code: Let the games begin! */
 
